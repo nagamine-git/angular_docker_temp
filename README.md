@@ -1,12 +1,10 @@
-## 初回設定
+## ビルド・アプリ構築まで
 ```bash
 # git clone
-git clone https://github.com/nagaminenot/vitace_docker
-# logsディレクトリを用意する
-mkdir logs
-# buildする
+git clone https://github.com/nagaminenot/angular_docker_temp
+# build
 docker-compose build
-# npm installしたりする
+# ng new
 docker-compose -f docker-compose.yml -f docker-compose.init.yml up
 ```
 
@@ -16,13 +14,13 @@ docker-compose -f docker-compose.yml -f docker-compose.init.yml up
 docker-compose -f docker-compose.yml -f docker-compose.serv.yml up
 ```
 
-## bashへの入り方
+## コンテナのbashへの入り方
 ```bash
 docker exec -it vitacedocker_angular_1 bash
 ```
 
 ## テストの仕方
 ```bash
-# bashに入った状態で以下を叩き、http://localhost:9876 を叩いたり、ソースを変更したりする
+# コンテナのbashに入った状態で以下を実行し、http://localhost:9876 をChromeで表示し、ソース更新する
 ng test --poll=2000
 ```
