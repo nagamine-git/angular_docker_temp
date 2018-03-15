@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  angular:
+    environment:
+      - "APP_DIR=${APP_DIR}"
+    ports:
+      - "$SERV_C_PORT:$SERV_L_PORT"
+      - "$TEST_C_PORT:$TEST_L_PORT"
+    working_dir: ${APP_DIR}
+    command: ng serve --host 0.0.0.0 --poll=2000

@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  angular:
+    build:
+      args:
+        - NODE_USER=$NODE_USER
+        - DATA_DIR=$DATA_DIR
+      context: ./nodejs
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: $HOST_DIR
+        target: $DATA_DIR

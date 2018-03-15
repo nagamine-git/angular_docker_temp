@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  angular:
+    command:
+      - /bin/sh
+      - -c
+      - |
+        npm install @angular/cli
+        ng new ${APP}
